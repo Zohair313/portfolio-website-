@@ -139,7 +139,7 @@ export default function App() {
           id="hero-section"
           className="relative min-h-screen w-full flex flex-col md:flex-row items-center justify-center md:justify-between overflow-hidden px-6 md:px-24 pt-28 md:pt-0"
           style={{
-            backgroundImage: `url('/img.jpg')`,
+            backgroundImage: `url(${import.meta.env.BASE_URL}img.jpg)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
