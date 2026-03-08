@@ -1,0 +1,140 @@
+@import "@fontsource/hanken-grotesk";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Dark, high-contrast theme for the new background */
+  --bg-color: #050505;
+  --text-main: #f5f5f5;
+  --text-muted: #a1a1a1;
+  --border-color: #1a1a1a;
+  --accent: rgb(57, 120, 122);
+  /* Vanta-matching accent */
+
+  font-family: "Hanken Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/img.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: var(--text-main);
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  cursor: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+}
+
+/* Chrome, Safari, Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: #C78181;
+  color: #ffffff;
+}
+
+#hero-section *::selection,
+#hero-section ::selection {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+a,
+button {
+  cursor: none;
+  /* Keep custom cursor active */
+}
+
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.hero-content-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+@keyframes float1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.3;
+  }
+
+  33% {
+    transform: translate(5%, -5%) scale(1.1);
+    opacity: 0.6;
+  }
+
+  66% {
+    transform: translate(-5%, 5%) scale(0.95);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.3;
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.2;
+  }
+
+  33% {
+    transform: translate(-5%, 5%) scale(0.9);
+    opacity: 0.5;
+  }
+
+  66% {
+    transform: translate(5%, -10%) scale(1.1);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.2;
+  }
+}
+
+.smoke-1 {
+  animation: float1 18s infinite ease-in-out;
+  filter: blur(80px);
+}
+
+.smoke-2 {
+  animation: float2 22s infinite ease-in-out;
+  filter: blur(100px);
+}
